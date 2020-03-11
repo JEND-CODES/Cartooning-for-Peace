@@ -1,6 +1,6 @@
-Cartooning for Peace - jQuery Web Scraping
-
 L'actualité vue par les dessins de presse !
+
+Cartooning for Peace - jQuery Web Scraping
 
 Démo => http://cartoon.planetcode.fr
 
