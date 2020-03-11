@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="Cartoon">
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+
+    <meta name="theme-color" content="#64B5F6" />
+
+    <title>Cartoon | Dessins de presse</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="FaviconPainting.png" />
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Polices -->
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: #333333;
+
+            margin: 0 auto;
+            overflow-x: hidden;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 78px;
+            background: #64B5F6;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        @media all and (max-width: 700px) {
+            .navbar {
+                height: 70px;
+            }
+        }
+
+        .logo-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 999;
+            border: 0px solid black;
+            width: 100%;
+            height: 70px;
+        }
+
+        .the-logo {
+            font-size: 36px;
+            font-family: 'Luckiest Guy';
+            color: #fff;
+            text-shadow: 2px 2px 2px black;
+            margin: 10px;
+            border: 0px solid black;
+
+        }
+
+        /*
+        @media all and (max-width: 700px) {
+            .the-logo {
+            }
+        }
+*/
+        .logo-subtitle {
+            color: white;
+            margin-top: -16px;
+            font-weight: bold;
+
+        }
+
+        /* 
+        @media all and (max-width: 700px) {
+            .logo-subtitle {
+            }
+        }
+*/
+        /*
+        .logo-img {}
+
+        .cartoon-container {}
+*/
+        @media all and (max-width: 700px) {
+            .cartoon-container {
+                padding: 0px 10px 0px 10px;
+            }
+        }
+
+        @media all and (min-width: 701px) {
+            .cartoon-container {
+                padding: 0px 100px 0px 100px;
+            }
+        }
+
+        @media all and (min-width: 901px) {
+            .cartoon-container {
+                padding: 0px 200px 0px 200px;
+            }
+        }
+
+        @media all and (min-width: 1101px) {
+            .cartoon-container {
+                padding: 0px 250px 0px 250px;
+            }
+        }
+
+        @media all and (min-width: 1301px) {
+            .cartoon-container {
+                padding: 0px 350px 0px 350px;
+            }
+        }
+
+        @media all and (min-width: 1401px) {
+            .cartoon-container {
+                padding: 0px 400px 0px 400px;
+            }
+        }
+
+        @media all and (min-width: 1501px) {
+            .cartoon-container {
+                padding: 0px 450px 0px 450px;
+            }
+        }
+
+        .tab img {
+            width: 100%;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        nav {
+            position: absolute;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            font-size: 16px;
+            border: 0px solid grey;
+            height: 360px;
+        }
+
+        ul {
+            margin-left: -35px;
+            list-style-type: none;
+
+        }
+
+        li {
+            width: 100%;
+            padding: 10px;
+            font-weight: bold;
+            margin-top: -20px;
+            margin-bottom: 15px;
+        }
+
+
+        li a {
+            text-decoration: none;
+            color: grey;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+        }
+
+        li a:hover {
+            color: black;
+            font-weight: bold;
+        }
+
+        li.active a {
+            font-weight: bold;
+            color: #373737;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        @media all and (max-width: 700px) {
+            #nav-tab3 {
+                display: none;
+            }
+
+            #nav-tab5 {
+                display: none;
+            }
+
+            #nav-tab7 {
+                display: none;
+            }
+
+            #nav-tab8 {
+                display: none;
+            }
+
+            nav {
+                height: 220px;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal.is-visible {
+            visibility: visible;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: hsla(0, 0%, 0%, 0.1);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s linear 0.3s, opacity 0.3s;
+        }
+
+        .modal.is-visible .modal-overlay {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }
+
+        .modal-wrapper {
+            position: absolute;
+            z-index: 9999;
+            top: 80px;
+            width: 100%;
+            background-color: transparent;
+
+        }
+
+        .modal-transition {
+            transition: all 0.3s 0.12s;
+            transform: translateY(-10%);
+            opacity: 0;
+        }
+
+        .modal.is-visible .modal-transition {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-content>*:first-child {
+            margin-top: 0px;
+        }
+
+        @media all and (max-width: 700px) {
+            .modal-content>*:first-child {
+                margin-top: -8px;
+            }
+        }
+
+        .modal-content>*:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-button {
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            font-size: 30px;
+            text-shadow: 0px 2px 1px black;
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 10px;
+            outline-style: none;
+            transition: 0.2s;
+        }
+
+        .menu-button:hover {
+            transition: 0.2s;
+            opacity: 0.85;
+        }
+
+        .cartoonist-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 50%;
+            color: grey;
+            text-transform: uppercase;
+
+        }
+
+        .deco-cartoon {
+            position: absolute;
+            width: 250px;
+            height: auto;
+            top: 86px;
+            left: 10%;
+            z-index: -1;
+            opacity: 1;
+            box-shadow: none;
+        }
+
+        @media all and (max-width: 700px) {
+            .deco-cartoon {
+                width: 150px;
+                top: 90px;
+                left: 3%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+    </div>
+
+    <!-- Logo Box -->
+    <div class="logo-box">
+        <a href="http://cartoon.planetcode.fr" style="text-decoration:none;" title="L'actualité vue par les dessins de presse">
+            <p class="the-logo">CARTOON</p>
+        </a>
+        <p class="logo-subtitle">Dessins de presse</p>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- Modal Menu-->
+    <button class="menu-button modal-toggle"><i class="fas fa-palette"></i></button>
+
+    <div class="modal">
+        <div class="modal-overlay modal-toggle"></div>
+        <div class="modal-wrapper modal-transition">
+            <div class="modal-body">
+                <div class="modal-content">
+                    <nav>
+                        <ul>
+                            <li class="active modal-toggle" id="nav-tab1"><a style="cursor:pointer;">Cartooning for Peace</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab2"><a style="cursor:pointer;">Charlie Hebdo</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab3"><a style="cursor:pointer;">Berth</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab5"><a style="cursor:pointer;">Troud</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab6"><a style="cursor:pointer;">Vidberg</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab7"><a style="cursor:pointer;">Ysope</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab8"><a style="cursor:pointer;">Schvartz</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab9"><a style="cursor:pointer;">Gorce</a></li>
+                            <li class="inactive modal-toggle" id="nav-tab10"><a style="cursor:pointer;">Micaël</a></li>
+
+                            <!-- <li class="inactive modal-toggle" id="nav-tab4"><a style="cursor:pointer;">Archives Thèmes</a></li> -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Deco -->
+    <img src="logoFreeCartoon.png" class="deco-cartoon" alt="Cartoon" />
+
+    <!-- jQuery Web Scraping results -->
+    <div class="cartoon-container">
+
+        <content>
+
+            <div class="tab" id="tab1">
+                <p class="cartoonist-title">Cartooning For Peace</p>
+                <div id="scrap_article0">
+                </div>
+            </div>
+
+            <div class="tab" id="tab2">
+                <p class="cartoonist-title">Charlie Hebdo</p>
+                <div id="scrap_article2">
+                </div>
+            </div>
+
+            <div class="tab" id="tab3">
+                <p class="cartoonist-title">Berth</p>
+                <div id="scrap_article">
+                </div>
+
+            </div>
+
+            <!-- <div class="tab" id="tab4">
+                <p class="cartoonist-title">Cartoonothèques / Archives thèmes</p>
+                <div id="scrap_article3">
+                </div>
+
+            </div> -->
+
+            <div class="tab" id="tab5">
+                <p class="cartoonist-title">Troud</p>
+                <div id="scrap_article4">
+                </div>
+
+            </div>
+
+            <div class="tab" id="tab6">
+                <p class="cartoonist-title">Vidberg</p>
+                <div id="scrap_article5">
+                </div>
+
+            </div>
+
+            <div class="tab" id="tab7">
+                <p class="cartoonist-title">Ysope</p>
+                <div id="scrap_article6">
+                </div>
+
+            </div>
+
+            <div class="tab" id="tab8">
+                <p class="cartoonist-title">Schvartz</p>
+                <div id="scrap_article7">
+                </div>
+
+            </div>
+
+            <div class="tab" id="tab9">
+                <p class="cartoonist-title">Gorce</p>
+                <div id="scrap_article8">
+                </div>
+
+            </div>
+
+            <div class="tab" id="tab10">
+                <p class="cartoonist-title">Micaël</p>
+                <div id="scrap_article9">
+                </div>
+
+            </div>
+
+        </content>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer>
+        <div style="background:#01579b;width:100%;height:auto;">
+            <br />
+            <br />
+            <a href="https://www.cartooningforpeace.org/cartoonotheque/" target="_blank" style="text-decoration: none; cursor:pointer;">
+                <p style="font-weight:500; color:white;font-size:18px;"><i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>&nbsp;Cartoonothèque</p>
+            </a>
+            <br />
+            <br />
+            <a href="http://portfolio.planetcode.fr" target="_blank" style="text-decoration: none;">
+                <p style="font-weight:500; color:white;font-size:14px;">Site réalisé par Jean-Eudes Nouaille-Degorce</p>
+                <p style="font-weight:500; color:white;font-size:14px;">Développeur Full Stack</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/jean-eudes-nouaille-degorce/" target="_blank" style="color: white;"><i class="fab fa-linkedin fa-2x" style="font-size: 24px;"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/JEND-CODES" target="_blank" style="color: white;"><i class="fab fa-github fa-2x" style="font-size: 24px;"></i></a>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </footer>
+
+    <!-- Dernière version du CDN jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        //**** jQuery Modal ****//
+        $('.modal-toggle').on('click', function(e) {
+            e.preventDefault();
+            $('.modal').toggleClass('is-visible');
+        });
+
+        //**** jQuery Nav pages transitions ****//
+        $(document).ready(function() {
+            $('nav ul li.inactive').each(function(index, el) {
+                var tabID = el.id.split('-')[1];
+                $('.tab#' + tabID).hide();
+            });
+        });
+
+        $('nav').delegate('.inactive', 'click', function(event) {
+            var selectedTab = this.id.split('-')[1];
+            // console.log(selectedTab);
+            document.location.hash = selectedTab;
+            $("html, body").animate({
+                scrollTop: 0
+            });
+            $('.tab:visible').fadeOut('fast', function() {
+                $('.tab#' + selectedTab).fadeIn('fast');
+            });
+
+            var $this = $(this);
+            $this.removeClass('inactive').addClass("active");
+            $this.siblings().addClass('inactive').removeClass('active');
+        });
+
+        // Prefilter CORS - workaround for cross origin requests
+        $.ajaxPrefilter(function(options) {
+            if (options.crossDomain && jQuery.support.cors) {
+                var http = window.location.protocol === "http:" ? "http:" : "https:";
+                options.url = http + "//cors-anywhere.herokuapp.com/" + options.url;
+            }
+        });
+
+        //**** Scrap 0 - Actualités Cartooning For Peace ****//
+        var urlToScrape0 = "https://www.lemonde.fr/blog/cartooningforpeace/";
+
+        $.ajax({
+            url: urlToScrape0,
+            method: "GET"
+        }).done(function(data0) {
+            var html0 = $(data0);
+            let output0 = "";
+
+            var article0 = html0.find("article");
+
+            $.each(article0, function(index, value0) {
+
+                const imageSrc0 = $(value0).find('img').attr("src");
+
+                const imageForm0 = '<br /><img src="' + imageSrc0 + '"style="width:100%;"/><br />';
+
+                const titleSelector0 = $(value0).find('.entry-title').text();
+
+                const titleForm0 = '<h3 style="color:grey;">' + titleSelector0 + '</h3>';
+
+                output0 += imageForm0 + titleForm0;
+
+            });
+
+            $("#scrap_article0").append(output0);
+
+        });
+
+        //**** Premier Scrap - Dessins de Berth ****//
+        var urlToScrape = "http://berth.canalblog.com/";
+
+        $.ajax({
+            url: urlToScrape,
+            method: "GET"
+        }).done(function(data) {
+            var html = $(data);
+            let output = "";
+
+            var article = html.find(".item_div");
+
+            $.each(article, function(index, value) {
+
+                const imageSrc = $(value).find('img').attr("src");
+
+                const imageForm = '<br /><img src="' + imageSrc + '"style="width:100%;"/><br />';
+
+                output += imageForm;
+
+            });
+
+            $("#scrap_article").append(output);
+
+        });
+
+        //**** Deuxième Scrap - Charlie Hebdo Actualités ****//
+        var urlToScrape2 = "https://charliehebdo.fr/dessins/";
+
+        $.ajax({
+            url: urlToScrape2,
+            method: "GET"
+        }).done(function(data2) {
+            var html2 = $(data2);
+            let output2 = "";
+
+            var article2 = html2.find("picture");
+
+            $.each(article2, function(index, value2) {
+
+                const imageSrc2 = $(value2).find('img').attr("src");
+
+                const imageForm2 = '<br /><img src="' + imageSrc2 + '" style="max-width:350px;"/><br />';
+
+                output2 += imageForm2;
+
+            });
+
+            $("#scrap_article2").append(output2);
+
+        });
+
+        //**** Troisième Scrap - Thèmes Cartooning for Peace ****//
+        /*
+        var urlToScrape3 = "https://www.cartooningforpeace.org/cartoonotheque/religions/";
+
+        $.ajax({
+            url: urlToScrape3,
+            method: "GET"
+        }).done(function(data3) {
+            var html3 = $(data3);
+
+            var article3 = html3.find("#carouendess img").css("width", "100%").css("border", "1px solid red");
+
+            $("#scrap_article3").append(article3);
+
+        });
+        */
+
+        //**** Qutarième Scrap - Blog de TROUD *//
+
+        var urlToScrape4 = "http://trouden.blogspot.com/";
+
+        $.ajax({
+            url: urlToScrape4,
+            method: "GET"
+        }).done(function(data4) {
+            var html4 = $(data4);
+            let output4 = "";
+
+            var article4 = html4.find(".post-body");
+            $.each(article4, function(index, value4) {
+                const imageSrc4 = $(value4).find('img').attr("src");
+
+                const imageForm4 = '<br /><img src="' + imageSrc4 + '" style="max-width:400px;"/><br />';
+
+                output4 += imageForm4;
+
+            });
+
+            $("#scrap_article4").append(output4);
+
+        });
+
+        //**** Cinquième Scrap - Blog de Vidberg ****//
+        var urlToScrape5 = "https://www.lemonde.fr/blog/vidberg/";
+
+        $.ajax({
+            url: urlToScrape5,
+            method: "GET"
+        }).done(function(data5) {
+            var html5 = $(data5);
+            let output5 = "";
+
+            var article5 = html5.find(".entry-content");
+
+            $.each(article5, function(index, value5) {
+                const imageSrc5 = $(value5).find('img').attr("src");
+
+                const imageForm5 = '<br /><img src="' + imageSrc5 + '" style="max-width:450px;"/><br />';
+
+                output5 += imageForm5;
+
+            });
+
+            $("#scrap_article5").append(output5);
+
+        });
+
+        //**** YSOPE -> http://ysope.over-blog.net/ ****//
+        var urlToScrape6 = "http://ysope.over-blog.net/";
+
+        $.ajax({
+            url: urlToScrape6,
+            method: "GET"
+        }).done(function(data6) {
+            var html6 = $(data6);
+            let output6 = "";
+
+            var article6 = html6.find(".contenuArticle");
+
+            $.each(article6, function(index, value6) {
+
+                const imageSrc6 = $(value6).find('img').attr("src");
+
+                const imageForm6 = '<br /><img src="' + imageSrc6 + '" style="max-width:500px;" /><br />';
+
+                output6 += imageForm6;
+
+            });
+
+            $("#scrap_article6").append(output6);
+
+        });
+
+        //**** Schvartz -> http://schvartzenblog.blogspot.com/ ****//
+        var urlToScrape7 = "http://schvartzenblog.blogspot.com/";
+
+        $.ajax({
+            url: urlToScrape7,
+            method: "GET"
+        }).done(function(data7) {
+            var html7 = $(data7);
+            let output7 = "";
+
+            var article7 = html7.find(".post-body");
+
+            $.each(article7, function(index, value7) {
+
+                const imageSrc7 = $(value7).find('img').attr("src");
+
+                const imageForm7 = '<br /><img src="' + imageSrc7 + '" style="max-width:370px;"/><br />';
+
+                output7 += imageForm7;
+
+            });
+
+            $("#scrap_article7").append(output7);
+
+        });
+
+        //**** Les Indégivrables -> https://www.lemonde.fr/blog/xaviergorce/ ****//
+        var urlToScrape8 = "https://www.lemonde.fr/blog/xaviergorce/";
+
+        $.ajax({
+            url: urlToScrape8,
+            method: "GET"
+        }).done(function(data8) {
+            var html8 = $(data8);
+            let output8 = "";
+
+            var article8 = html8.find(".entry-content");
+
+            $.each(article8, function(index, value8) {
+                const imageSrc8 = $(value8).find('img').attr("src");
+
+                const imageForm8 = '<br /><img src="' + imageSrc8 + '" style="max-width:450px;"/><br />';
+
+                output8 += imageForm8;
+
+            });
+
+            $("#scrap_article8").append(output8);
+
+        });
+
+        //**** L'air du temps par Micaël -> https://www.lemonde.fr/blog/micael/ ****//
+        var urlToScrape9 = "https://www.lemonde.fr/blog/micael/";
+
+        $.ajax({
+            url: urlToScrape9,
+            method: "GET"
+        }).done(function(data9) {
+            var html9 = $(data9);
+            let output9 = "";
+
+            var article9 = html9.find(".entry-content");
+
+            $.each(article9, function(index, value9) {
+                const imageSrc9 = $(value9).find('img').attr("src");
+
+                const imageForm9 = '<br /><img src="' + imageSrc9 + '" style="max-width:500px;"/><br />';
+
+                output9 += imageForm9;
+
+            });
+
+            $("#scrap_article9").append(output9);
+
+        });
+    </script>
+
+</body></html>
